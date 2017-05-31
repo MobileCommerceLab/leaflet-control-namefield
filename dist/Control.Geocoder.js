@@ -928,6 +928,11 @@ module.exports = {
 				for (var i = data.length - 1; i >= 0; i--) {
 					var bbox = data[i].boundingbox;
 					var geojson_data = data[i].geojson;
+
+					console.log("*******");
+					console.log(geojson_data);
+					console.log("*******");
+
 					for (var j = 0; j < 4; j++) bbox[j] = parseFloat(bbox[j]);
 					results[i] = {
 						icon: data[i].icon,
