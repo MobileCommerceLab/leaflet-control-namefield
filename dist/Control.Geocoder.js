@@ -927,6 +927,7 @@ module.exports = {
 				var results = [];
 				for (var i = data.length - 1; i >= 0; i--) {
 					var bbox = data[i].boundingbox;
+					var geojson_data = data[i].geojson;
 					for (var j = 0; j < 4; j++) bbox[j] = parseFloat(bbox[j]);
 					results[i] = {
 						icon: data[i].icon,
@@ -937,7 +938,7 @@ module.exports = {
 							: undefined,
 						bbox: L.latLngBounds([bbox[0], bbox[2]], [bbox[1], bbox[3]]),
 						center: L.latLng(data[i].lat, data[i].lon),
-						geojson: data[i].geojson,
+						geojson: L.geoJSON(geojson_data),
 						properties: data[i]
 					};
 				}
