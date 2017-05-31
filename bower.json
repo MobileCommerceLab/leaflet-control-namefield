@@ -1,6 +1,6 @@
 {
   "name": "leaflet-control-geocoder",
-  "version": "1.5.6",
+  "version": "1.5.6.1",
   "homepage": "https://github.com/MobileCommerceLab/leaflet-control-geocoder",
   "authors": [
     "Daniel Smullen <dsmullen@cs.cmu.edu>"
@@ -8,9 +8,7 @@
   "description": "Extendable geocoder with built-in OSM/Nominatim support",
   "main": [
     "dist/Control.Geocoder.js",
-    "dist/Control.Geocoder.css",
-    "images/geocoder.png",
-    "images/throbber.gif"
+    "dist/Control.Geocoder.css"
   ],
   "moduleType": [
     "amd",
