@@ -919,7 +919,9 @@ module.exports = {
 				q: query,
 				limit: 5,
 				format: 'json',
-				addressdetails: 1
+				addressdetails: 1,
+				polygon_geojson: 1,
+				namedetails: 1
 			}, this.options.geocodingQueryParams),
 			function(data) {
 				var results = [];
@@ -929,11 +931,13 @@ module.exports = {
 					results[i] = {
 						icon: data[i].icon,
 						name: data[i].display_name,
+						alt: data[i].namedetails,
 						html: this.options.htmlTemplate ?
 							this.options.htmlTemplate(data[i])
 							: undefined,
 						bbox: L.latLngBounds([bbox[0], bbox[2]], [bbox[1], bbox[3]]),
 						center: L.latLng(data[i].lat, data[i].lon),
+						geojson: data[i].geojson,
 						properties: data[i]
 					};
 				}
@@ -947,7 +951,9 @@ module.exports = {
 				lon: location.lng,
 				zoom: Math.round(Math.log(scale / 256) / Math.log(2)),
 				addressdetails: 1,
-				format: 'json'
+				format: 'json',
+				polygon_geojson: 1,
+				namedetails: 1
 			}, this.options.reverseQueryParams), function(data) {
 				var result = [],
 				    loc;
@@ -956,6 +962,8 @@ module.exports = {
 					loc = L.latLng(data.lat, data.lon);
 					result.push({
 						name: data.display_name,
+						alt: data[i].namedetails,
+						geojson: data[i].geojson,
 						html: this.options.htmlTemplate ?
 							this.options.htmlTemplate(data)
 							: undefined,
