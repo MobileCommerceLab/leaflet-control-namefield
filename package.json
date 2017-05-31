@@ -1,6 +1,6 @@
 {
   "name": "leaflet-control-geocoder",
-  "version": "1.5.4",
+  "version": "1.5.7",
   "description": "Extendable geocoder with builtin support for Nominatim, Bing, Google, Mapbox, Photon, What3Words, MapQuest, Mapzen, HERE",
   "main": "dist/Control.Geocoder.js",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/perliedman/leaflet-control-geocoder.git"
+    "url": "git://github.com/MobileCommerceLab/leaflet-control-geocoder"
   },
   "keywords": [
     "leaflet",
@@ -26,10 +26,10 @@
     "mapzen",
     "here"
   ],
-  "author": "Per Liedman <per@liedman.net>",
+  "author": "Daniel Smullen <dsmullen@cs.cmu.edu>",
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/perliedman/leaflet-control-geocoder/issues"
+    "url": "https://github.com/MobileCommerceLab/leaflet-control-geocoder/issues"
   },
   "browserify-shim": {
     "leaflet": "global:L"
