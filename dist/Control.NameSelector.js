@@ -42,10 +42,6 @@ module.exports = {
 
       L.DomEvent.disableClickPropagation(container);
 
-      //Fill in the name field automatically the first time you do a geocode search.
-      this._map.once('markgeocode', this._setName, this);
-
-
       return container;
     },
 
@@ -58,8 +54,7 @@ module.exports = {
     },
 
     _doNotify: function () {
-      //Alert the map that this control is connected to that the name field changed.
-      this._map.fire('name-changed', {name: this._inputField.value});
+      this.fire('name-changed', {name: this._inputField.value});
     },
 
     _keydown: function(e) {
