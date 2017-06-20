@@ -1,6 +1,6 @@
 {
   "name": "leaflet-control-geocoder",
-  "version": "1.5.7",
+  "version": "1.5.8",
   "homepage": "https://github.com/MobileCommerceLab/leaflet-control-geocoder",
   "authors": [
     "Daniel Smullen <dsmullen@cs.cmu.edu>"
