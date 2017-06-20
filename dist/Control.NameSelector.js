@@ -58,7 +58,7 @@ module.exports = {
         } else {
           L.DomEvent.addListener(icon, 'mousedown', this._doNotify, this);
           L.DomEvent.addListener(icon, 'mouseover', this._expand, this);
-          L.DomEvent.addListener(container, 'mouseout', this._collapse, this);
+          L.DomEvent.addListener(inputField, 'mouseout', this._collapse, this);
           this._map.on('movestart', this._collapse, this);
         }
       } else {
