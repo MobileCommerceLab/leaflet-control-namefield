@@ -27,7 +27,7 @@ module.exports = {
     },
 
     onAdd: function (map) {
-      var className = 'leaflet-control-geocoder-nameselector',
+      var className = 'leaflet-control-nameselector',
           container = L.DomUtil.create('div', className + ' leaflet-bar'),
           icon = L.DomUtil.create('button', className + '-icon', container),
           form = this._form = L.DomUtil.create('div', className + '-form', container);
