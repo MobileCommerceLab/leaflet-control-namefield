@@ -76,7 +76,7 @@ module.exports = {
 
     _expand: function () {
       L.DomUtil.addClass(this._container, 'leaflet-control-nameselector-expanded');
-      this._input.select();
+      this._inputField.select();
       this.fire('expand');
     },
 
