@@ -29,10 +29,6 @@ module.exports = {
 
       L.DomEvent.disableClickPropagation(container);
 
-      //Fill in the name field automatically the first time you do a geocode search.
-      this._map.once('markgeocode', this._setName, this);
-
-
       return container;
     },
 
