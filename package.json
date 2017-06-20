@@ -1,8 +1,8 @@
 {
-  "name": "leaflet-control-geocoder",
+  "name": "leaflet-control-namefiekd",
   "version": "1.5.8",
-  "description": "Extendable geocoder with builtin support for Nominatim, Bing, Google, Mapbox, Photon, What3Words, MapQuest, Mapzen, HERE",
-  "main": "dist/Control.Geocoder.js",
+  "description": "Extendable generic NameSelector text field.",
+  "main": "dist/Control.NameSelector.js",
   "scripts": {
     "prepublish": "sh ./scripts/build.sh",
     "publish": "sh ./scripts/publish.sh",
@@ -10,26 +10,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/MobileCommerceLab/leaflet-control-geocoder"
+    "url": "git://github.com/MobileCommerceLab/leaflet-control-namefield"
   },
   "keywords": [
     "leaflet",
-    "geocoder",
-    "locations",
-    "nominatim",
-    "bing",
-    "google",
-    "mapbox",
-    "photon",
-    "what3words",
-    "mapquest",
-    "mapzen",
-    "here"
+    "geocoder"
   ],
   "author": "Daniel Smullen <dsmullen@cs.cmu.edu>",
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/MobileCommerceLab/leaflet-control-geocoder/issues"
+    "url": "https://github.com/MobileCommerceLab/leaflet-control-namefield/issues"
   },
   "browserify-shim": {
     "leaflet": "global:L"
