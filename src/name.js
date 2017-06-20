@@ -17,7 +17,8 @@ module.exports = {
       var className = 'leaflet-control-nameselector',
           container = L.DomUtil.create('div', className + ' leaflet-bar'),
           icon = L.DomUtil.create('button', className + '-icon', container),
-          form = this._form = L.DomUtil.create('div', className + '-form', container);
+          form = this._form = L.DomUtil.create('div', className + '-form', container),
+          inputField;
 
       this._map = map;
       this._container = container;
@@ -25,9 +26,9 @@ module.exports = {
       icon.innerHTML = '&nbsp;';
       icon.type = 'button';
 
-      this._inputField = L.DomUtil.create('input', '', form);
-      this._inputField.type = 'text';
-      this._inputField.placeholder = this.options.placeholder;
+      inputField = this._inputField = L.DomUtil.create('input', '', form);
+      inputField.type = 'text';
+      inputField.placeholder = this.options.placeholder;
 
       L.DomEvent.addListener(this._inputField, 'keydown', this._keydown, this);
       L.DomEvent.addListener(icon, 'mousedown', this._doNotify, this);
