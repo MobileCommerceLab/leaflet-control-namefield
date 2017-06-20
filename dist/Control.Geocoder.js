@@ -11,7 +11,7 @@ module.exports = {
 			expand: 'click',
 			position: 'topright',
 			placeholder: 'Search...',
-			namePlaceholder: 'New Location',
+			namePlaceholder: 'Location Name',
 			errorMessage: 'Nothing found.',
 			suggestMinLength: 3,
 			suggestTimeout: 250,
@@ -46,13 +46,6 @@ module.exports = {
 			input.type = 'text';
 			input.placeholder = this.options.placeholder;
 
-			var nameContainer = L.DomUtil.create('div', className + ' leaflet-bar', container),
-			nameForm = this._nameForm = L.DomUtil.create('div', className + '-form', nameContainer),
-			nameField = this._nameField = L.DomUtil.create('input', '', nameForm);
-
-			nameField.type = 'text';
-			nameField.placeholder = this.options.namePlaceholder;
-
 			this._errorElement = L.DomUtil.create('div', className + '-form-no-error', container);
 			this._errorElement.innerHTML = this.options.errorMessage;
 
@@ -62,7 +55,6 @@ module.exports = {
 			L.DomEvent.disableClickPropagation(this._alts);
 
 			L.DomEvent.addListener(input, 'keydown', this._keydown, this);
-			L.DomEvent.addListener(nameField, 'keydown', null, this);
 
 			L.DomEvent.addListener(input, 'blur', function() {
 				if (this.options.collapsed && !this._preventBlurCollapse) {
@@ -70,13 +62,6 @@ module.exports = {
 				}
 				this._preventBlurCollapse = false;
 			}, this);
-			L.DomEvent.addListener(nameField, 'blur', function() {
-				if (this.options.collapsed && !this._preventBlurCollapse) {
-					this._collapse();
-				}
-				this._preventBlurCollapse = false;
-			}, this);
-
 
 			if (this.options.collapsed) {
 				if (this.options.expand === 'click') {
@@ -170,11 +155,6 @@ module.exports = {
 			if (!this.options.collapsed) {
 				this._clearResults();
 			}
-
-			//set the name field to whatever we selected, if we're still sitting on the placeholder.
-			//if (this._nameField.value == this.options.namePlaceholder){
-				this._nameField.value = result.name;
-			//} 
 
 			this.fire('markgeocode', {geocode: result});
 		},
