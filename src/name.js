@@ -46,7 +46,7 @@ module.exports = {
 
     _doNotify: function () {
       //Alert the map that this control is connected to that the name field changed.
-      this._map.fire('name-changed', {name: this._inputField.value});
+      this.fire('name-changed', {name: this._inputField.value});
     },
 
     _keydown: function(e) {
