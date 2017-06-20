@@ -16,6 +16,8 @@ var L = (typeof window !== "undefined" ? window['L'] : typeof global !== "undefi
 module.exports = {
   "class": L.Control.extend({
     options: {
+      collapsed: true,
+      expand: 'mouseover',
       position: 'topright',
       placeholder: 'Location Name...'
     },
@@ -44,11 +46,51 @@ module.exports = {
       inputField.placeholder = this.options.placeholder;
 
       L.DomEvent.addListener(this._inputField, 'keydown', this._keydown, this);
-      L.DomEvent.addListener(icon, 'mousedown', this._doNotify, this);
+
+      if (this.options.collapsed) {
+        if (this.options.expand === 'click') {
+          L.DomEvent.addListener(icon, 'click', function(e) {
+            if (e.button === 0 && e.detail !== 2) {
+              this._toggle();
+              this._doNotify();
+            }
+          }, this);
+        } else {
+          L.DomEvent.addListener(icon, 'mousedown', this._doNotify, this);
+          L.DomEvent.addListener(icon, 'mouseover', this._expand, this);
+          L.DomEvent.addListener(icon, 'mouseout', this._collapse, this);
+          this._map.on('movestart', this._collapse, this);
+        }
+      } else {
+        L.DomEvent.addListener(icon, 'click', function() {
+          this._doNotify();
+        }, this);
+        this._expand();
+      }
+      
 
       L.DomEvent.disableClickPropagation(container);
 
       return container;
+    },
+
+    _expand: function () {
+      L.DomUtil.addClass(this._container, 'leaflet-control-nameselector-expanded');
+      this._input.select();
+      this.fire('expand');
+    },
+
+    _collapse: function () {
+      this._container.className = this._container.className.replace(' leaflet-control-nameselector-expanded', '');
+      this.fire('collapse');
+    },
+
+    _toggle: function() {
+      if (this._container.className.indexOf('leaflet-control-nameselector-expanded') >= 0) {
+        this._collapse();
+      } else {
+        this._expand();
+      }
     },
 
     getField: function(){
