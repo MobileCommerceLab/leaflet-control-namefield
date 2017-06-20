@@ -17,7 +17,7 @@ module.exports = {
   "class": L.Control.extend({
     options: {
       collapsed: true,
-      expand: 'mouseover',
+      expand: 'click',
       position: 'topright',
       placeholder: 'Location Name...'
     },
