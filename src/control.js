@@ -44,8 +44,9 @@ module.exports = {
 			input.type = 'text';
 			input.placeholder = this.options.placeholder;
 
-			nameContainer = this._nameContainer = L.DomUtil.create('div', className + ' leaflet-bar');
-			nameField = this._nameField = L.DomUtil.create('input', '', nameContainer);
+			nameContainer = this._nameContainer = L.DomUtil.create('div', className + ' name-bar');
+			nameForm = this._nameForm = L.DomUtil.create('div', className + '-form', nameContainer),
+			nameField = this._nameField = L.DomUtil.create('input', '', nameForm);
 			nameField.type = 'text';
 			nameField.placeholder = this.options.namePlaceholder;
 
