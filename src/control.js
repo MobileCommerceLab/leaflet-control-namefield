@@ -44,7 +44,8 @@ module.exports = {
 			input.type = 'text';
 			input.placeholder = this.options.placeholder;
 
-			nameField = this._nameField = L.DomUtil.create('input', '', form);
+			nameContainer = this._nameContainer = L.DomUtil.create('div', className + ' leaflet-bar');
+			nameField = this._nameField = L.DomUtil.create('input', '', nameContainer);
 			nameField.type = 'text';
 			nameField.placeholder = this.options.namePlaceholder;
 
@@ -57,7 +58,7 @@ module.exports = {
 			L.DomEvent.disableClickPropagation(this._alts);
 
 			L.DomEvent.addListener(input, 'keydown', this._keydown, this);
-			//L.DomEvent.addListener(nameField, 'keydown', this._keydown, this);
+			L.DomEvent.addListener(nameField, 'keydown', null, this);
 
 			L.DomEvent.addListener(input, 'blur', function() {
 				if (this.options.collapsed && !this._preventBlurCollapse) {
@@ -167,8 +168,8 @@ module.exports = {
 			}
 
 			//set the name field to whatever we selected, if we're still sitting on the placeholder.
-			if (this.nameField.value == this.options.namePlaceholder){
-				this.nameField.value = result.name;
+			if (this._nameField.value == this.options.namePlaceholder){
+				this._nameField.value = result.name;
 			} 
 
 			this.fire('markgeocode', {geocode: result});
