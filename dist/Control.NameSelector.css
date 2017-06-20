@@ -1,83 +1,83 @@
-.leaflet-control-geocoder {
+.leaflet-control-nameselector {
 	border-radius: 4px;
 	background: white;
 	min-width: 26px;
 	min-height: 26px;
 }
 
-.leaflet-touch .leaflet-control-geocoder {
+.leaflet-touch .leaflet-control-nameselector {
 	min-width: 30px;
 	min-height: 30px;
 }
 
-.leaflet-control-geocoder a, .leaflet-control-geocoder .leaflet-control-geocoder-icon {
+.leaflet-control-nameselector a, .leaflet-control-nameselector .leaflet-control-nameselector-icon {
 	border-bottom: none;
 	display: inline-block;
 }
 
-.leaflet-control-geocoder .leaflet-control-geocoder-alternatives a {
+.leaflet-control-nameselector .leaflet-control-nameselector-alternatives a {
 	width: inherit;
 	height: inherit;
 	line-height: inherit;
 }
 
-.leaflet-control-geocoder a:hover, .leaflet-control-geocoder .leaflet-control-geocoder-icon:hover {
+.leaflet-control-nameselector a:hover, .leaflet-control-nameselector .leaflet-control-nameselector-icon:hover {
 	border-bottom: none;
 	display: inline-block;
 }
 
-.leaflet-control-geocoder-form {
+.leaflet-control-nameselector-form {
 	display: none;
 	vertical-align: middle;
 }
-.leaflet-control-geocoder-expanded .leaflet-control-geocoder-form {
+.leaflet-control-nameselector-expanded .leaflet-control-nameselector-form {
 	display: inline-block;
 }
-.leaflet-control-geocoder-form input {
+.leaflet-control-nameselector-form input {
 	font-size: 120%;
 	border: 0;
 	background-color: transparent;
 	width: 246px;
 }
 
-.leaflet-control-geocoder-icon {
+.leaflet-control-nameselector-icon {
 	border-radius: 4px;
 	width: 26px;
 	height: 26px;
 	border: none;
 	background-color: white;
-	background-image: url(images/geocoder.png);
+	background-image: url(images/save.png);
 	background-repeat: no-repeat;
 	background-position: center;
 }
 
-.leaflet-touch .leaflet-control-geocoder-icon {
+.leaflet-touch .leaflet-control-nameselector-icon {
 	width: 30px;
 	height: 30px;
 }
 
-.leaflet-control-geocoder-throbber .leaflet-control-geocoder-icon {
+.leaflet-control-nameselector-throbber .leaflet-control-nameselector-icon {
 	background-image: url(images/throbber.gif);
 }
 
-.leaflet-control-geocoder-form-no-error {
+.leaflet-control-nameselector-form-no-error {
 	display: none;
 }
 
-.leaflet-control-geocoder-form input:focus {
+.leaflet-control-nameselector-form input:focus {
 	outline: none;
 }
 
-.leaflet-control-geocoder-form button {
+.leaflet-control-nameselector-form button {
 	display: none;
 }
-.leaflet-control-geocoder-error {
+.leaflet-control-nameselector-error {
 	margin-top: 8px;
 	margin-left: 8px;
 	display: block;
 	color: #444;
 }
-.leaflet-control-geocoder-alternatives {
+.leaflet-control-nameselector-alternatives {
 	display: block;
 	width: 272px;
 	list-style: none;
@@ -85,11 +85,11 @@
 	margin: 0;
 }
 
-.leaflet-control-geocoder-alternatives-minimized {
+.leaflet-control-nameselector-alternatives-minimized {
 	display: none;
 	height: 0;
 }
-.leaflet-control-geocoder-alternatives li {
+.leaflet-control-nameselector-alternatives li {
 	white-space: nowrap;
 	display: block;
 	overflow: hidden;
@@ -99,7 +99,7 @@
 	cursor: pointer;
 }
 
-.leaflet-control-geocoder-alternatives li a, .leaflet-control-geocoder-alternatives li a:hover {
+.leaflet-control-nameselector-alternatives li a, .leaflet-control-nameselector-alternatives li a:hover {
 	width: inherit;
 	height: inherit;
 	line-height: inherit;
@@ -108,15 +108,15 @@
 	text-align: left;
 }
 
-.leaflet-control-geocoder-alternatives li:last-child {
+.leaflet-control-nameselector-alternatives li:last-child {
 	border-bottom: none;
 }
-.leaflet-control-geocoder-alternatives li:hover, .leaflet-control-geocoder-selected {
+.leaflet-control-nameselector-alternatives li:hover, .leaflet-control-nameselector-selected {
 	background-color: #f5f5f5;
 }
-.leaflet-control-geocoder-address-detail {
+.leaflet-control-nameselector-address-detail {
 	
 }
-.leaflet-control-geocoder-address-context {
+.leaflet-control-nameselector-address-context {
 	color: #666;
 }
