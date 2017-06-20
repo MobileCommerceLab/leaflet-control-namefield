@@ -1,13 +1,13 @@
 {
-  "name": "leaflet-control-geocoder",
-  "version": "1.5.8",
-  "homepage": "https://github.com/MobileCommerceLab/leaflet-control-geocoder",
+  "name": "leaflet-control-namefield",
+  "version": "1.0.0",
+  "homepage": "https://github.com/MobileCommerceLab/leaflet-control-namefield",
   "authors": [
     "Daniel Smullen <dsmullen@cs.cmu.edu>"
   ],
-  "description": "Extendable geocoder with built-in OSM/Nominatim support",
+  "description": "Extendable generic NameSelector field for leaflet.",
   "main": [
-    "dist/Control.Geocoder.js",
+    "dist/Control.Name.js",
     "dist/Control.Geocoder.css"
   ],
   "moduleType": [
