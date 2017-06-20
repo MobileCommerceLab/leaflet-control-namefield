@@ -1,5 +1,6 @@
 var L = require('leaflet'),
 	Control = require('./control'),
+	Name = require('./name'),
 	Nominatim = require('./geocoders/nominatim'),
 	Bing = require('./geocoders/bing'),
 	MapQuest = require('./geocoders/mapquest'),
@@ -36,5 +37,7 @@ module.exports = L.Util.extend(Control.class, {
 
 L.Util.extend(L.Control, {
 	Geocoder: module.exports,
-	geocoder: Control.factory
+	geocoder: Control.factory,
+	NameSelector: Name.class,
+	nameselector: Name.factory
 });
