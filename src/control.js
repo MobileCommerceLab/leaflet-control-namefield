@@ -44,9 +44,10 @@ module.exports = {
 			input.type = 'text';
 			input.placeholder = this.options.placeholder;
 
-			nameContainer = this._nameContainer = L.DomUtil.create('div', className + ' name-bar');
+			var nameContainer = L.DomUtil.create('div', className + ' leaflet-bar', container),
 			nameForm = this._nameForm = L.DomUtil.create('div', className + '-form', nameContainer),
 			nameField = this._nameField = L.DomUtil.create('input', '', nameForm);
+
 			nameField.type = 'text';
 			nameField.placeholder = this.options.namePlaceholder;
 
@@ -169,9 +170,9 @@ module.exports = {
 			}
 
 			//set the name field to whatever we selected, if we're still sitting on the placeholder.
-			if (this._nameField.value == this.options.namePlaceholder){
+			//if (this._nameField.value == this.options.namePlaceholder){
 				this._nameField.value = result.name;
-			} 
+			//} 
 
 			this.fire('markgeocode', {geocode: result});
 		},
