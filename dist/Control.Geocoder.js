@@ -11,7 +11,6 @@ module.exports = {
 			expand: 'click',
 			position: 'topright',
 			placeholder: 'Search...',
-			namePlaceholder: 'Location Name',
 			errorMessage: 'Nothing found.',
 			suggestMinLength: 3,
 			suggestTimeout: 250,
@@ -157,6 +156,7 @@ module.exports = {
 			}
 
 			this.fire('markgeocode', {geocode: result});
+			this._map.fire('markgeocode', {geocode: result});
 		},
 
 		_toggle: function() {
@@ -379,7 +379,7 @@ module.exports = {
 };
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../util":13}],3:[function(_dereq_,module,exports){
+},{"../util":14}],3:[function(_dereq_,module,exports){
 (function (global){
 var L = (typeof window !== "undefined" ? window['L'] : typeof global !== "undefined" ? global['L'] : null),
 	Util = _dereq_('../util');
@@ -436,7 +436,7 @@ module.exports = {
 };
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../util":13}],4:[function(_dereq_,module,exports){
+},{"../util":14}],4:[function(_dereq_,module,exports){
 (function (global){
 var L = (typeof window !== "undefined" ? window['L'] : typeof global !== "undefined" ? global['L'] : null),
 	Util = _dereq_('../util');
@@ -529,7 +529,7 @@ module.exports = {
 };
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../util":13}],5:[function(_dereq_,module,exports){
+},{"../util":14}],5:[function(_dereq_,module,exports){
 (function (global){
 var L = (typeof window !== "undefined" ? window['L'] : typeof global !== "undefined" ? global['L'] : null),
     Util = _dereq_('../util');
@@ -603,7 +603,7 @@ module.exports = {
 };
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../util":13}],6:[function(_dereq_,module,exports){
+},{"../util":14}],6:[function(_dereq_,module,exports){
 (function (global){
 var L = (typeof window !== "undefined" ? window['L'] : typeof global !== "undefined" ? global['L'] : null),
 	Util = _dereq_('../util');
@@ -701,7 +701,7 @@ module.exports = {
 
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../util":13}],7:[function(_dereq_,module,exports){
+},{"../util":14}],7:[function(_dereq_,module,exports){
 (function (global){
 var L = (typeof window !== "undefined" ? window['L'] : typeof global !== "undefined" ? global['L'] : null),
 	Util = _dereq_('../util');
@@ -790,7 +790,7 @@ module.exports = {
 };
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../util":13}],8:[function(_dereq_,module,exports){
+},{"../util":14}],8:[function(_dereq_,module,exports){
 (function (global){
 var L = (typeof window !== "undefined" ? window['L'] : typeof global !== "undefined" ? global['L'] : null),
 	Util = _dereq_('../util');
@@ -879,7 +879,7 @@ module.exports = {
 };
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../util":13}],9:[function(_dereq_,module,exports){
+},{"../util":14}],9:[function(_dereq_,module,exports){
 (function (global){
 var L = (typeof window !== "undefined" ? window['L'] : typeof global !== "undefined" ? global['L'] : null),
 	Util = _dereq_('../util');
@@ -984,7 +984,7 @@ module.exports = {
 };
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../util":13}],10:[function(_dereq_,module,exports){
+},{"../util":14}],10:[function(_dereq_,module,exports){
 (function (global){
 var L = (typeof window !== "undefined" ? window['L'] : typeof global !== "undefined" ? global['L'] : null),
 	Util = _dereq_('../util');
@@ -1090,7 +1090,7 @@ module.exports = {
 
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../util":13}],11:[function(_dereq_,module,exports){
+},{"../util":14}],11:[function(_dereq_,module,exports){
 (function (global){
 var L = (typeof window !== "undefined" ? window['L'] : typeof global !== "undefined" ? global['L'] : null),
 	Util = _dereq_('../util');
@@ -1156,10 +1156,11 @@ module.exports = {
 };
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../util":13}],12:[function(_dereq_,module,exports){
+},{"../util":14}],12:[function(_dereq_,module,exports){
 (function (global){
 var L = (typeof window !== "undefined" ? window['L'] : typeof global !== "undefined" ? global['L'] : null),
 	Control = _dereq_('./control'),
+	Name = _dereq_('./name'),
 	Nominatim = _dereq_('./geocoders/nominatim'),
 	Bing = _dereq_('./geocoders/bing'),
 	MapQuest = _dereq_('./geocoders/mapquest'),
@@ -1196,11 +1197,97 @@ module.exports = L.Util.extend(Control["class"], {
 
 L.Util.extend(L.Control, {
 	Geocoder: module.exports,
-	geocoder: Control.factory
+	geocoder: Control.factory,
+	NameSelector: Name["class"],
+	nameselector: Name.factory
 });
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./control":1,"./geocoders/arcgis":2,"./geocoders/bing":3,"./geocoders/google":4,"./geocoders/here":5,"./geocoders/mapbox":6,"./geocoders/mapquest":7,"./geocoders/mapzen":8,"./geocoders/nominatim":9,"./geocoders/photon":10,"./geocoders/what3words":11}],13:[function(_dereq_,module,exports){
+},{"./control":1,"./geocoders/arcgis":2,"./geocoders/bing":3,"./geocoders/google":4,"./geocoders/here":5,"./geocoders/mapbox":6,"./geocoders/mapquest":7,"./geocoders/mapzen":8,"./geocoders/nominatim":9,"./geocoders/photon":10,"./geocoders/what3words":11,"./name":13}],13:[function(_dereq_,module,exports){
+(function (global){
+var L = (typeof window !== "undefined" ? window['L'] : typeof global !== "undefined" ? global['L'] : null);
+
+module.exports = {
+  "class": L.Control.extend({
+    options: {
+      position: 'topright',
+      placeholder: 'Location Name...'
+    },
+
+    includes: L.Mixin.Events,
+
+    initialize: function (options) {
+      L.Util.setOptions(this, options);
+    },
+
+    onAdd: function (map) {
+      var className = 'leaflet-control-geocoder-nameselector',
+          container = L.DomUtil.create('div', className + ' leaflet-bar'),
+          form = this._form = L.DomUtil.create('div', className + '-form', container);
+
+      this._map = map;
+      this._container = container;
+
+      this._inputField = L.DomUtil.create('input', '', form);
+      this._inputField.type = 'text';
+      this._inputField.placeholder = this.options.placeholder;
+
+      L.DomEvent.addListener(this._inputField, 'keydown', this._keydown, this);
+
+      L.DomEvent.disableClickPropagation(container);
+
+      //Fill in the name field automatically the first time you do a geocode search.
+      this._map.once('markgeocode', this._setName, this);
+
+
+      return container;
+    },
+
+    _setName: function(result) {
+      result = result.geocode || result;
+      this._inputField.value = result.name;
+      this._doNotify();
+
+      return this;
+    },
+
+    _doNotify: function () {
+      //Alert the map that this control is connected to that the name field changed.
+      this._map.fire('name-changed', {name: this._inputField.value});
+    },
+
+    _keydown: function(e) {
+      var _this = this;
+
+      switch (e.keyCode) {
+      // Escape
+      case 27:
+        break;
+      // Up
+      case 38:
+        L.DomEvent.preventDefault(e);
+        break;
+      // Up
+      case 40:
+        L.DomEvent.preventDefault(e);
+        break;
+      // Enter
+      case 13:
+        L.DomEvent.preventDefault(e);
+        this._doNotify();
+        break;
+      default:
+
+      }
+    }
+  }),
+  factory: function(options) {
+    return new L.Control.NameSelector(options);
+  }
+};
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{}],14:[function(_dereq_,module,exports){
 (function (global){
 var L = (typeof window !== "undefined" ? window['L'] : typeof global !== "undefined" ? global['L'] : null),
 	lastCallbackId = 0,
