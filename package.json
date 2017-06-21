@@ -1,6 +1,6 @@
 {
   "name": "leaflet-control-namefield",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Extendable generic NameSelector text field.",
   "main": "dist/Control.NameSelector.js",
   "scripts": {
@@ -13,8 +13,7 @@
     "url": "git://github.com/MobileCommerceLab/leaflet-control-namefield"
   },
   "keywords": [
-    "leaflet",
-    "geocoder"
+    "leaflet"
   ],
   "author": "Daniel Smullen <dsmullen@cs.cmu.edu>",
   "license": "BSD-2-Clause",
