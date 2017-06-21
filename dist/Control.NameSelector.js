@@ -93,15 +93,6 @@ module.exports = {
       }
     },
 
-    getField: function(){
-      return this._inputField.value;
-    },
-
-    setField: function(arg){
-      this._inputField.value = arg;
-      this._doNotify();
-    },
-
     _setField: function(result) {
       result = result.geocode || result;
       this._inputField.value = result.name;
