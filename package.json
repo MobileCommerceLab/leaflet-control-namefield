@@ -1,6 +1,6 @@
 {
   "name": "leaflet-control-namefield",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Extendable generic NameSelector text field.",
   "main": "dist/Control.NameSelector.js",
   "scripts": {
