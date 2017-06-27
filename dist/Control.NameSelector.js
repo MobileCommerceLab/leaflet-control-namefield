@@ -22,7 +22,7 @@ module.exports = {
       placeholder: 'Location Name...'
     },
 
-    includes: L.Mixin.Events,
+    includes: L.Evented.prototype,
 
     initialize: function (options) {
       L.Util.setOptions(this, options);
